@@ -1,0 +1,4 @@
+chat_storage/
+**/node_modules
+**/logs
+**/.env

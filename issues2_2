@@ -1,0 +1,113 @@
+﻿Issues 2: I will set @@ as a complete mark.
+
+!!!recent issues!!!
+@@-Only room admin can change room name.
+@@-tooltip for icons
+@@-change icons (block,ban,exclam)
+@@-image url
+
+@@- Messages should be send by pressing Enter as well as clicking the Send button. 
+@@- The text align of the message field should be RTL (as most users use Arabic) and the buttons come to right of the field.
+@@- Remove 'Private Rooms' and 'Private Rooms' from rooms list. They servs no purpose, as all rooms are public. 
+@@- Admins should be able to create/edit avatars for their rooms
+@@- Room avatars should appear in the rooms list as shown in the wirefiremes
+@@- Create About page
+@@- 'DISPLAY HANDLE' should accept unicode names (like 'رضا')
+@@- Limit the maximum number of rooms that a user can create to 3 
+@@- Maximum number of rooms at any given time should not exceed 100.
+@@- A room admin should be able to ban/unban a user, so that user can stay in the room but not allowed to post anymore in that room
+@@- A room admin should be able to block a user, so that user is kick out of the room and never can join that room again
+@@- When a user is blocked from a room, all of his messages are removed from the room.
+@@- A user X should be able to block another user Y in a room, so that X does not see any more public or private messages posted by Y
+@@- Users should be able to post audio and video (.mp3 and .mp4) files into rooms
+@@- Login button should be above 'forget password' and 'Register' links
+@@- Copyright year at the footer should be 2018-present year 
+
+
+Login/Profile area
+
+@@- Reduce minimum required length of username and password to 3
+@@- User should be able to login with their username as well as their email
+@@- In the profile form, increase height of `male` and `female` options in `Gender` in form. 
+
+
+
+Rooms
+@@- `Online Users` column should not display offline users
+@@- `Online Users` column should not display my name as a user. That serves no purpose.
+@@- Remove `Rooms3`, which seems to be a glitch
+@@- Remove the option `You activated ...`. It is superflous and confusing. 
+@@- In `Online Users` columsn, move the ban/block options to a dropdown menu, placed instead of the current ticks.
+@@- When user A bans user B, A will not receive any message from B.
+@@- When user A chatting with user B, and A sends a message to B, do not show green notification to B. There is no need for that.
+@@- When user A blocked user B, B should be removed from A's `Online Users` column. 
+@@- A room's admin should have a golden badge/crown near his/her avatar to show others who is the boss here. 
+@@- Hovering on a user's avatar should display a tooltip containing that user's profile. 
+@@- A 'Home' room should always be present as the default room at the top of the rooms list.
+@@- Apart from 'Home',  rooms should appear  in the rooms list sorted by number of joined members. 
+@@- An empty room should be automatically removed from the rooms list
+
+
+Issues 3:
+
+@@- As all rooms, with the exception of private room are public, remove `Public` description from rooms descriptions. 
+@@- Adding avatar after second login does not work
+@@- Dropdown menu for ban/block not implemented at `Private room`
+@@- Offline users should not be displayed at `All Users` list. This makes no sense and just clutters the column. 
+@@- Green notification of new private messages should be hyperlinked to the relevant screen in private room. That is: When Bob PMs Mary, Mary should be able to go directly to chat with Bob, by clicking on the notification toast.
+@@- Users should be able to see all rooms in the rooms list, including their own rooms.  
+@@- Remove 'my_rooms' option from rooms search field. 
+@@- Default room avatar is not visible when user is creating their first rooms 
+@@- When users going to create the second room, the avatar of their previous room is displayed, while the avatar should be the default one
+@@- When user tries to add a photo of any format, should not get `Upload Failed` error
+@@- New rooms disapear as soon as the creator leaves them. This makes them unusable. Set a condition to remove a room only if it's more than 1 hour old and still empty
+
+Step 5: Improve look and feel:
+
+@@- Make text align of input field RTL (Text starts from right and flows from right to left, like in Arabic language)
+
+@@- Remove the name of user near 'Block' and 'Ban'.
+
+@@- Add a 'Private Message' item to dropdown menu above block/ban.  When it is clicked, Bob can directly PM Mary from inside any room. The pm message is written at the same input field of the room, with a sign before the message indicating it is a PM directed at Mary.
+
+
+Step 6
+
+Functionalites
+@@- Correct stats of `Users online`  at the `rooms` page. Currently it shows total number of users.
+@@- When a user joins a room it should immediately appear in `Online Users` list of other users in the room. 
+
+@@- Flood control is ineffective. When user reaches the maximum message quota, he should be banned for BAN_TIME. Currently just gets a warning message
+@@- The time that user is banned should be indicated to the user, like this: You are posting a lot. Wait for $BAN_TIME (unit in minuts) before you can post again.
+@@-When the Bio or Location texts are too long and they are not saved, show a notificaiton indicating why the profile has not been saved. 
+@@- When a profile is successfully update, show a success notifcation message: 'Your profile is updated'
+@@- Remove the red and green borders around the user in `User's list` with whom user is not chatting. They are just cofusing
+@@- What's the difference between 'ban' and 'block` for user A and B in room C where neither user A or B is C's admin? If there is no difference, then use a single `ignore` option instead of 'ban' and 'block'. 
+    In public room, if the room admin blocks one user, all of his messages are deleted and he is kicked out of the room.
+                    if the room admin bans one user, he can enter the room and can read the messages but he can't post any message.
+    In private room, if 'userA' blocks 'userB', they cannot send a message to each other.
+                     if 'userA' bans 'userB', they can have a private chat but if 'userA' is in another room, he won't be notified when 'userB' sends a private message.
+                     He will be notified by only unbanned users's private messages.
+
+
+Appearance
+@@- Make  `Bio`'s input field RTL
+@@- Change cursor to pointer when user hovers over a PM notificaiton
+@@- Add some 5px padding to the right of the first character in message input field
+ 
+
+- Ads
+@@- Merge Block/Ban Functionality if not a room admin
+
+
+Step 7
+@@- remove ad zone from below the input field. 
+@@- When a user is blocked in private room the red conversation buble near his name should also be removed.
+@@- Usernames in the Online users list are lowercase , while the messages info the first letter the capitalized. Just remove any case manipulation and show the original usernames everywhere.
+@@- Can not select 'unban' for the first user in the list. (the dropdown menu disapears before hovering on that option)
+
+Step 7/b
+@@- ban/Unban has no effect in private room. 
+@@- Database table for ads should contain the whole snippet `<script>...</script>`, as we my want to use ads other format than adsense.
+@@- Fix 'Room admin Unkonwn User' in rooms list
+@@- When private message is chosen from drop down menu, the cursere should go to text input field and focus. 
